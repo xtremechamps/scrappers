@@ -9,7 +9,6 @@ import json, ast
 
 url = "https://github.com/devendradora"
 values = {}
-
 def scrap_github_profile(url):
 	req = requests.get(url)
 	name = url.split("/")
