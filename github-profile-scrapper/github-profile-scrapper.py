@@ -19,7 +19,8 @@ def scrap_github_profile(url):
 		values['git_name'] = html.find('span',{'class':'p-name vcard-fullname d-block'}).getText()
 		values['git_username'] = html.find('span',{'class':'p-nickname vcard-username d-block'}).getText()
 		values['git_description'] = html.find('div',{'class':'p-note user-profile-bio'}).getText()
-
+        values['git_organization'] = html.find('div',{'class':'border-top py-3 clearfix'}).getText()
+        print values;
 		for a in html.findAll('a',{'href':'/pedrotoba?tab=repositories'}):
 			s = a.find('span',{'class':'Counter'}).getText()
 			values['git_repositories'] = s.strip(' \t\n\r')
