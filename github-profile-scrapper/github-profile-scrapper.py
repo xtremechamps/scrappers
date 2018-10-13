@@ -10,6 +10,7 @@ import json, ast
 url = "https://github.com/devendradora"
 values = {}
 
+#added method level comment
 def scrap_github_profile(url):
 	req = requests.get(url)
 	name = url.split("/")
@@ -20,7 +21,6 @@ def scrap_github_profile(url):
 		values['git_name'] = html.find('span',{'class':'p-name vcard-fullname d-block'}).getText()
 		values['git_username'] = html.find('span',{'class':'p-nickname vcard-username d-block'}).getText()
 		values['git_description'] = html.find('div',{'class':'p-note user-profile-bio'}).getText()
-
 		for a in html.findAll('a',{'href':'/pedrotoba?tab=repositories'}):
 			s = a.find('span',{'class':'Counter'}).getText()
 			values['git_repositories'] = s.strip(' \t\n\r')
