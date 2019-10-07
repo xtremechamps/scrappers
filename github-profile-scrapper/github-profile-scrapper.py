@@ -40,8 +40,6 @@ def scrap_github_profile(url):
 	val_json = ast.literal_eval(json.dumps(values))
 	print(json.dumps(val_json, indent=2))
 
-
-
 if __name__ == "__main__":
     scrap_github_profile(url)
 
